@@ -72,7 +72,9 @@
         .social-link{
             color: #FFFFFF;
             text-decoration:none;
-            font-size:15px;
+            font-size:32px;
+            display:inline;
+            margin: 0 4px 0 4px;
         }
     </style>
 </head>
@@ -82,9 +84,12 @@
             <div class="padding"></div>
             <img src="{{asset('img/logo.png')}}" alt="logo" width="200">
             <p class="title ">
-                <div class="social-link" style="font-size:20px;" >Follow sosial media kami:</div>
-                <div><a href="https://www.facebook.com/SuryaPanganCV/" class="social-link"><i class="fa fa-facebook-square" aria-hidden="true"></i> CV. Surya Pangan</a></div>
-                <div><a href="https://www.instagram.com/surya.pangan/?hl=id" class="social-link"><i class="fa fa-instagram" aria-hidden="true"></i> surya.pangan</a></div>
+                <div class="social-link" style="font-size:12px;" >Tetap terhubung melalui</div>
+                <div>
+                    <a href="https://www.facebook.com/SuryaPanganCV/" class="social-link"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/surya.pangan/?hl=id" class="social-link"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://wa.link/w0jhnj" class="social-link"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                </div>
             </p>
             <div class="padding"></div>
         </div>
