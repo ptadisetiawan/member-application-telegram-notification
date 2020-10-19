@@ -76,7 +76,7 @@ class MemberController extends Controller
         $request->validate([
             'nama' => 'required',
             'alamat' => 'required',
-            'kota' => 'required',
+            'ktp' => 'required',
             'telepon' => 'required|unique:members,telepon,{$request->telepon}',
             'tgl_lahir' => 'required'
         ]);
@@ -90,8 +90,8 @@ class MemberController extends Controller
             . "$member->nama\n"
             . "<b>Alamat: </b>\n"
             . "$member->alamat\n"
-            . "<b>Kota: </b>\n"
-            . "$member->kota\n"
+            . "<b>KTP: </b>\n"
+            . "$member->ktp\n"
             . "<b>No. Hp: </b>\n"
             . "$member->telepon\n"
             . "<b>Tanggal lahir: </b>\n"

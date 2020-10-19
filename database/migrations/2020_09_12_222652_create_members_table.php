@@ -18,7 +18,7 @@ class CreateMembersTable extends Migration
             $table->string('kode');
             $table->string('nama');
             $table->string('alamat');
-            $table->string('kota');
+            $table->string('ktp');
             $table->string('telepon');
             $table->string('tgl_lahir');
             $table->string('class');

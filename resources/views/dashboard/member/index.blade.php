@@ -33,7 +33,7 @@ Dashboard - {{$pagename ?? ''}}
                         <thead>
                             <th>Kode</th>
                             <th>Nama</th>
-                            <th>Kota</th>
+                            <th>KTP</th>
                             <th>Telepon</th>
                             <th>Poin</th>
                         </thead>
@@ -71,7 +71,7 @@ Dashboard - {{$pagename ?? ''}}
          columns: [
                   { data: 'kode', name: 'kode' },
                   { data: 'nama', name: 'nama' },
-                  { data: 'kota', name: 'kota' },
+                  { data: 'ktp', name: 'ktp' },
                   { data: 'telepon', name: 'telepon' },
                   { data: 'balance', name: 'balance' },
                ],

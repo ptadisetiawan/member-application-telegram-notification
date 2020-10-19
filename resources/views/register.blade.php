@@ -119,14 +119,14 @@
                   </p>
                   <p style="padding-top: 10px">
                     <ons-input
-                      id="kota"
-                      name="kota"
-                      placeholder="Masukkan Kota"
+                      id="ktp"
+                      name="ktp"
+                      placeholder="Masukkan KTP"
                       modifier="underbar"
                       required
-                      value="{{old('kota')}}"
+                      value="{{old('ktp')}}"
                     >
-                    @error('kota')
+                    @error('ktp')
                     <div class="error">{{ $message }}</div>
                 @enderror
                     </ons-input>

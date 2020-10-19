@@ -100,18 +100,18 @@
                 <ons-row vertical-align="center" style="padding-bottom:10px">
                     <ons-col>
                         <div style="color:#FFFFFF; font-size:18px; text-align:left">
-                            {{ \Illuminate\Support\Str::limit($member->nama, 20, $end='...') }}
+                            {{ \Illuminate\Support\Str::limit($member->nama, 25, $end='...') }}
                         </div>
                         <div style="color:#FFFFFF; font-size:15px;  text-align:left">
                             <ons-icon style="color: #FFFFFF; margin-right:5px;"
-                            icon="fa-map-marker">
-                            </ons-icon> {{$member->kota}}
+                            icon="fa-address-card">
+                            </ons-icon> {{$member->ktp ?? ''}}
                         </div>
                     </ons-col>
                     <ons-col>
                         <div style="color:#FFFFFF; float:right; font-size:50px">
                             <strong>
-                            {{$member->kode}}
+                            {{$member->kode ?? ''}}
                             </strong>
                         </div>
                     </ons-col>

@@ -26,9 +26,9 @@ class MembersImport implements ToCollection, WithHeadingRow
             ], [
                 'nama' => $row['customer'],
                 'alamat' => $row['alamat'],
-                'kota' => $row['kota'],
+                'ktp' => $row['fax'],
                 'telepon' => $row['telp'],
-                'tgl_lahir' => $row['fax'],
+                'tgl_lahir' => $row['kota'],
                 'class' => $row['class'],
                 'balance' => $row['balance'],
                 'isBlackList' => $blacklist
