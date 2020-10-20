@@ -79,7 +79,11 @@
             text-decoration:none;
             font-size:32px;
             display:inline;
-            margin: 0 4px 0 4px;
+            margin: 0 12px 0 12px;
+        }
+
+        .ikon{
+            font-size: 48px;
         }
     </style>
 </head>
@@ -91,9 +95,9 @@
             <p class="title ">
                 <div class="social-link" style="font-size:12px;" >Tetap terhubung melalui</div>
                 <div>
-                    <a href="https://www.facebook.com/SuryaPanganCV/" class="social-link"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-                    <a href="https://www.instagram.com/surya.pangan/?hl=id" class="social-link"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    <a href="https://wa.link/w0jhnj" class="social-link"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/SuryaPanganCV/" class="social-link"><i class="ikon fa fa-facebook-square" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/suryapangancv/?hl=id" class="social-link"><i class="ikon fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://wa.link/w0jhnj" class="social-link"><i class="ikon fa fa-whatsapp" aria-hidden="true"></i></a>
                 </div>
             </p>
         </div>
@@ -147,6 +151,9 @@
                 loop:true,
                 margin:10,
                 nav:false,
+                autoplay:true,
+                autoplayTimeout:3000,
+                autoplayHoverPause:true,
                 responsive:{
                     0:{
                         items:1.3
