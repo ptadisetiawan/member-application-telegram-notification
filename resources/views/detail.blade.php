@@ -23,7 +23,7 @@
             background: linear-gradient(148deg, rgba(244,126,30,1) 35%, rgba(142,73,17,1) 100%);
             text-align: center;
             align-items: center;
-            margin-bottom: 110px;
+            margin-bottom: 120px;
         }
         .isi{
             border-top-left-radius: 35px;
@@ -57,12 +57,17 @@
         }
 
         .card  {
-            height: 200px !important;
+            min-height: 200px;
+            max-width: 425px;
+            max-height: 260px;
+            min-width: 200px;
             margin-top: 35px;
             margin-left: 20px;
             margin-right: 20px;
-            background:linear-gradient(148deg, rgba(13,0,116,0.9) 12%, rgba(0,0,0,0.9) 100%), url('/img/batik2.png');
-            background-size:cover;
+            /* background:linear-gradient(148deg, rgba(13,0,116,0.9) 12%, rgba(0,0,0,0.9) 100%), url('/img/batik2.png'); */
+            background-image: url('img/template.png');
+            background-repeat:no-repeat;
+            background-size:100% 100%;
             -webkit-box-shadow: 11px 14px 15px -9px rgba(0,0,0,0.44);
             -moz-box-shadow: 11px 14px 15px -9px rgba(0,0,0,0.44);
             box-shadow: 11px 14px 15px -9px rgba(0,0,0,0.44);
@@ -96,20 +101,24 @@
                     </div>
             </div>
             <div class="card">
-                <div style="font-size: 20px; color:#FFFFFF; font-style:italic; padding-bottom:20%"><strong> MEMBER CARD </strong></div>
-                <ons-row vertical-align="center" style="padding-bottom:10px">
-                    <ons-col>
-                        <div style="color:#FFFFFF; font-size:18px; text-align:left">
+                {{-- <div style="font-size: 20px; color:#FFFFFF; font-style:italic; padding-bottom:20%"><strong> MEMBER CARD </strong></div> --}}
+                <ons-row vertical-align="center" style="padding-bottom:10px; padding-top:35%">
+                    <ons-col style="background-color:blue">
+                        {{-- <div style="color:#000000; font-size:18px; text-align:right">
                             {{ \Illuminate\Support\Str::limit($member->nama, 25, $end='...') }}
-                        </div>
-                        <div style="color:#FFFFFF; font-size:15px;  text-align:left">
+                        </div> --}}
+                        {{-- <div style="color:#FFFFFF; font-size:15px;  text-align:left">
                             <ons-icon style="color: #FFFFFF; margin-right:5px;"
                             icon="fa-address-card">
                             </ons-icon> {{$member->ktp ?? ''}}
-                        </div>
+                        </div> --}}
                     </ons-col>
                     <ons-col>
-                        <div style="color:#FFFFFF; float:right; font-size:50px">
+                        <div style="color:rgba(244,126,30,1); font-size:14px; text-align:right;"><strong>
+                            {{ \Illuminate\Support\Str::limit($member->nama, 25, $end='...') }}
+                            </strong>
+                        </div>
+                        <div style="color:#000000; float:right; font-size:12px;">
                             <strong>
                             {{$member->kode ?? ''}}
                             </strong>
@@ -119,8 +128,8 @@
             </div>
         </div>
         <div style="text-align: center" class="isi">
-            <div style="padding-bottom:25px; font-size:25px"><strong>BARCODE</strong></div>
-            <img src="data:image/png;base64,{{DNS1D::getBarcodePNG($member->kode, 'C93')}}" alt="barcode" height="50" />
+            {{-- <div style="padding-bottom:25px; font-size:25px"><strong>BARCODE</strong></div>
+            <img src="data:image/png;base64,{{DNS1D::getBarcodePNG($member->kode, 'C93')}}" alt="barcode" height="50" /> --}}
             <div style="padding-top:20px; color: grey; padding-bottom:10px; text-align:left"><strong>Promo terbaru</strong></div>
 
             <div class="owl-carousel">
