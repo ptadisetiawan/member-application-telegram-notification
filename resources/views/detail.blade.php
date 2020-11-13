@@ -64,19 +64,44 @@
             margin-top: 35px;
             margin-left: 20px;
             margin-right: 20px;
-            /* background:linear-gradient(148deg, rgba(13,0,116,0.9) 12%, rgba(0,0,0,0.9) 100%), url('/img/batik2.png'); */
-            background-image: url('img/template.png');
-            background-repeat:no-repeat;
-            background-size:100% 100%;
+            padding:0;
+            transition: transform 0.5s;
+            transform-style: preserve-3d;
+            cursor: pointer;
             -webkit-box-shadow: 11px 14px 15px -9px rgba(0,0,0,0.44);
             -moz-box-shadow: 11px 14px 15px -9px rgba(0,0,0,0.44);
             box-shadow: 11px 14px 15px -9px rgba(0,0,0,0.44);
         }
 
+        .front, .back {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            backface-visibility: hidden;
+            height: 100%;
+            width:100%;
+            margin: 0;
+        }
+
+        .front {
+        background-image: url('img/template.png');
+        background-repeat:no-repeat;
+        background-size:100% 100%;
+
+        }
+
+        .back {
+        /* background-image: url('img/template.png');
+        background-repeat:no-repeat;
+        background-size:100% 100%; */
+        transform: rotateY(180deg);
+        }
+
         .iklan{
             border-radius:15px;
         }
-
     </style>
 </head>
 <body>
@@ -100,36 +125,32 @@
                     </strong>
                     </div>
             </div>
-            <div class="card">
-                {{-- <div style="font-size: 20px; color:#FFFFFF; font-style:italic; padding-bottom:20%"><strong> MEMBER CARD </strong></div> --}}
-                <ons-row vertical-align="center" style="padding-bottom:10px; padding-top:35%">
-                    <ons-col style="background-color:blue">
-                        {{-- <div style="color:#000000; font-size:18px; text-align:right">
-                            {{ \Illuminate\Support\Str::limit($member->nama, 25, $end='...') }}
-                        </div> --}}
-                        {{-- <div style="color:#FFFFFF; font-size:15px;  text-align:left">
-                            <ons-icon style="color: #FFFFFF; margin-right:5px;"
-                            icon="fa-address-card">
-                            </ons-icon> {{$member->ktp ?? ''}}
-                        </div> --}}
-                    </ons-col>
-                    <ons-col>
-                        <div style="color:rgba(244,126,30,1); font-size:14px; text-align:right;"><strong>
-                            {{ \Illuminate\Support\Str::limit($member->nama, 25, $end='...') }}
-                            </strong>
-                        </div>
-                        <div style="color:#000000; float:right; font-size:12px;">
-                            <strong>
-                            {{$member->kode ?? ''}}
-                            </strong>
-                        </div>
-                    </ons-col>
-                  </ons-row>
+            <div class="card" onclick="flip(event)">
+                <div class="front">
+                    <ons-row vertical-align="center" style="padding-bottom:10px; padding-top:35%">
+                        <ons-col style="background-color:blue">
+                        </ons-col>
+                        <ons-col>
+                            <div style="color:#EF7A13; font-size:14px; text-align:right; padding-right:10px;"><strong>
+                                {{ \Illuminate\Support\Str::limit($member->nama, 25, $end='...') }}
+                                </strong>
+                            </div>
+                            <div style="color: #EF7A13; float:right; font-size:12px; padding-right:10px;">
+                                <strong>
+                                {{$member->kode ?? ''}}
+                                </strong>
+                            </div>
+                        </ons-col>
+                      </ons-row>
+                  </div>
+                  <div class="back">
+                    {!! QrCode::size(150)->generate($member->kode); !!}
+                    {{-- <img src="data:image/png;base64,{{DNS1D::getBarcodePNG($member->kode, 'C93')}}" alt="barcode" height="50" /> --}}
+                  </div>
+
             </div>
         </div>
         <div style="text-align: center" class="isi">
-            {{-- <div style="padding-bottom:25px; font-size:25px"><strong>BARCODE</strong></div>
-            <img src="data:image/png;base64,{{DNS1D::getBarcodePNG($member->kode, 'C93')}}" alt="barcode" height="50" /> --}}
             <div style="padding-top:20px; color: grey; padding-bottom:10px; text-align:left"><strong>Promo terbaru</strong></div>
 
             <div class="owl-carousel">
@@ -162,6 +183,18 @@
               }
           });
           });
+
+          function flip(event){
+            var element = event.currentTarget;
+            if (element.className === "card") {
+            if(element.style.transform == "rotateY(180deg)") {
+            element.style.transform = "rotateY(0deg)";
+            }
+            else {
+            element.style.transform = "rotateY(180deg)";
+            }
+        }
+        };
     </script>
 </body>
 </html>
