@@ -65,12 +65,17 @@
             margin-left: 20px;
             margin-right: 20px;
             padding:0;
+            perspective: 1000;
+            -webkit-perspective: 1000;
             transition: transform 0.5s;
+            -webkit-transition: -webkit-transform 0.5s;
             transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
             cursor: pointer;
             -webkit-box-shadow: 11px 14px 15px -9px rgba(0,0,0,0.44);
             -moz-box-shadow: 11px 14px 15px -9px rgba(0,0,0,0.44);
             box-shadow: 11px 14px 15px -9px rgba(0,0,0,0.44);
+            background-color:transparent;
         }
 
         .front, .back {
@@ -80,23 +85,38 @@
             justify-content: center;
             align-items: center;
             backface-visibility: hidden;
-            height: 100%;
-            width:100%;
-            margin: 0;
+            -moz-backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            -webkit-perspective: 1000;
+             width:100%;
+             height:100%;
+            
         }
 
         .front {
         background-image: url('img/template.png');
         background-repeat:no-repeat;
         background-size:100% 100%;
-
+            -webkit-perspective: 1000;
+         -webkit-transform:rotateY(0deg);
+        -moz-transform:rotateY(0deg);
+        -o-transform:rotateY(0deg);
+        transform:rotateY(0deg);
         }
 
         .back {
-        /* background-image: url('img/template.png');
-        background-repeat:no-repeat;
-        background-size:100% 100%; */
-        transform: rotateY(180deg);
+         background-color: #FFFFFF;
+         backface-visibility: hidden;
+         border-radius:10px;
+            -moz-backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            -webkit-perspective: 1000;
+         -webkit-transform:rotateY(180deg);
+        -moz-transform:rotateY(180deg);
+        -o-transform:rotateY(180deg);
+        transform:rotateY(180deg);
         }
 
         .iklan{
@@ -125,7 +145,7 @@
                     </strong>
                     </div>
             </div>
-            <div class="card" onclick="flip(event)">
+            <div id="kartumember" class="card" onclick="flip(event)">
                 <div class="front">
                     <ons-row vertical-align="center" style="padding-bottom:10px; padding-top:35%">
                         <ons-col style="background-color:blue">
@@ -189,9 +209,11 @@
             if (element.className === "card") {
             if(element.style.transform == "rotateY(180deg)") {
             element.style.transform = "rotateY(0deg)";
+            $('#kartumember').css("-webkit-transform", "rotateY(0deg)")
             }
             else {
             element.style.transform = "rotateY(180deg)";
+             $('#kartumember').css("-webkit-transform", "rotateY(180deg)")
             }
         }
         };
